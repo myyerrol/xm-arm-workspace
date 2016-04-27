@@ -1,0 +1,21 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find xm_arm_gazebo_controller_config)/config/xm_arm_gazebo_joint_position.yaml" command="load" />
+
+  <!-- Load the controllers -->
+  <node name="arm_controller_spawner" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen" ns="/xm_arm"
+        args="joint_lift_position_controller
+              joint_waist_position_controller
+              joint_big_arm_position_controller
+              joint_forearm_position_controller
+              joint_wrist_pitching_position_controller
+              joint_wrist_rotation_position_controller" />
+
+  <node name="gripper_controller_spawner" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen" ns="/xm_arm"
+         args="joint_finger_left_position_controller
+               joint_finger_right_position_controller" />
+
+</launch>

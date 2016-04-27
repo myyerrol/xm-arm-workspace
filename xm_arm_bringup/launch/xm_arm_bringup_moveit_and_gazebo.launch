@@ -1,0 +1,23 @@
+<launch>
+
+  <!-- Launch gazebo  -->
+  <include file="$(find xm_arm_gazebo)/launch/xm_arm_empty_world.launch" />
+
+  <!-- Load ros_control xm_arm joint states launch file -->
+  <include file="$(find xm_arm_gazebo_controller_config)/launch/xm_arm_gazebo_joint_states.launch" />
+
+  <!-- Load ros_control xm_arm trajectory control launch file -->
+  <include file="$(find xm_arm_gazebo_controller_config)/launch/xm_arm_gazebo_joint_trajectory.launch" />
+
+  <!-- Load moveit launch file -->
+  <include file="$(find xm_arm_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <include file="$(find xm_arm_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true" />
+    <arg name="debug" value="false" />
+  </include>
+
+</launch>

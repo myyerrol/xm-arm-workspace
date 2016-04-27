@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<robot name="xmbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- The following xacro:include files set up definitions of parts of the robot body -->
+  <xacro:include filename="$(find xm_arm_description)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find xm_arm_description)/urdf/xm_base.urdf.xacro" />
+  <xacro:include filename="$(find xm_arm_description)/urdf/xm_arm.urdf.xacro" />
+  <xacro:include filename="$(find xm_arm_description)/urdf/xm_gripper.urdf.xacro" />
+  <xacro:include filename="$(find xm_arm_description)/urdf/xm_camera.urdf.xacro" />
+  <xacro:include filename="$(find xm_arm_description)/urdf/xm_kinect.urdf.xacro" />
+  <xacro:include filename="$(find xm_arm_description)/urdf/xm_laser.urdf.xacro" />
+
+  <!-- Attach the base -->
+  <base name="base" color="Grey" />
+
+  <!-- Add the drive wheels -->
+  <wheel parent="base" suffix="1" color="Orange" type="continuous"
+         origin_xyz="0.19419 0.00022708 -0.042" origin_rpy="-1.5708 0 -1.5708"
+         inert_origin_xyz="8.0491E-16 -1.3878E-17 -0.0042221"
+         inert_ixx="0.00030696" inert_ixy="-3.4634E-22" inert_ixz="-7.3136E-19"
+         inert_iyy="0.00030696" inert_iyz="8.9342E-21" inert_izz="0.00029643" />
+  <wheel parent="base" suffix="2" color="Orange" type="continuous"
+         origin_xyz="-0.096968 -0.16833 -0.042" origin_rpy="-1.5708 0 2.618"
+         inert_origin_xyz="-1.3878E-17 1.3878E-17 -0.0042221"
+         inert_ixx="0.00030696" inert_ixy="1.0391E-20" inert_ixz="1.3553E-20"
+         inert_iyy="0.00030696" inert_iyz="4.616E-21" inert_izz="0.00029643" />
+  <wheel parent="base" suffix="3" color="Orange" type="continuous"
+         origin_xyz="-0.097362 0.1681 -0.042"   origin_rpy="-1.5708 0 0.5236"
+         inert_origin_xyz="1.4572E-15 0 -0.0042221"
+         inert_ixx="0.00030696" inert_ixy="-3.3256E-21" inert_ixz="2.7105E-20"
+         inert_iyy="0.00030696" inert_iyz="-1.1933E-20" inert_izz="0.00029643" />
+
+  <!-- Attach the arm -->
+  <lift  name="lift"  parent="base" color="White" />
+  <waist name="waist" parent="lift" color="White" />
+  <big_arm name="big_arm" parent="waist" color="White" />
+  <forearm name="forearm" parent="big_arm" color="White" />
+  <wrist_pitching name="wrist_pitching" parent="forearm" color="White" />
+  <wrist_rotation name="wrist_rotation" parent="wrist_pitching" color="White" />
+
+  <!-- Attach the gripper -->
+  <finger_left  name="finger_left"  parent="wrist_rotation" color="Green" type="revolute" />
+  <finger_right name="finger_right" parent="wrist_rotation" color="Green" type="revolute" />
+
+  <!-- Attach the camera -->
+  <camera name="camera" parent="kinect" color="Black" />
+
+  <!-- Attach the kinect -->
+  <kinect name="kinect" parent="base" color="Black" type="revolute" />
+
+  <!-- Attach the laser -->
+  <laser name="laser" parent="base" color="Black" />
+
+</robot>

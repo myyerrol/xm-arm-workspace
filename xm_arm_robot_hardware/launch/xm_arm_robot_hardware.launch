@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- Load xm_robot's urdf -->
+  <param name="robot_description" textfile="$(find xm_arm_description)/urdf/xmbot_with_arm.urdf" />
+
+  <include file="$(find xm_arm_hardware_controller_config)/launch/xm_arm_hardware_joint_states.launch" />
+
+  <include file="$(find xm_arm_hardware_controller_config)/launch/xm_arm_hardware_joint_trajectory.launch" />
+
+  <node name="xm_arm_robot_hardware" pkg="xm_arm_robot_hardware" type="xm_arm_robot_hardware" output="screen" />
+
+</launch>

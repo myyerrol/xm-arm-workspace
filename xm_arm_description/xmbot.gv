@@ -1,0 +1,53 @@
+digraph G {
+node [shape=box];
+"base_footprint" [label="base_footprint"];
+"base_link" [label="base_link"];
+"link_kinect" [label="link_kinect"];
+"link_kinect_depth" [label="link_kinect_depth"];
+"link_laser" [label="link_laser"];
+"link_lift" [label="link_lift"];
+"link_waist" [label="link_waist"];
+"link_big_arm" [label="link_big_arm"];
+"link_forearm" [label="link_forearm"];
+"link_wrist_pitching" [label="link_wrist_pitching"];
+"link_wrist_rotation" [label="link_wrist_rotation"];
+"link_finger_left" [label="link_finger_left"];
+"link_finger_right" [label="link_finger_right"];
+"link_gripper_frame" [label="link_gripper_frame"];
+"link_wheel_1" [label="link_wheel_1"];
+"link_wheel_2" [label="link_wheel_2"];
+"link_wheel_3" [label="link_wheel_3"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_footprint" -> "base_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_joint" -> "base_link"
+"base_link" -> "joint_kinect" [label="xyz: -0.06656 0.00022708 1.1145 \nrpy: 1.5708 -0 -6.1679e-17"]
+"joint_kinect" -> "link_kinect"
+"link_kinect" -> "kinect_depth_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -5.55112e-17 -1.5708"]
+"kinect_depth_joint" -> "link_kinect_depth"
+"base_link" -> "joint_laser" [label="xyz: 0.20674 0.00022708 0.181 \nrpy: -6.7054e-18 6.9389e-17 -1.5708"]
+"joint_laser" -> "link_laser"
+"base_link" -> "joint_lift" [label="xyz: -0.04456 0.00022708 0.72985 \nrpy: -2.7756e-17 -0 -1.5708"]
+"joint_lift" -> "link_lift"
+"link_lift" -> "joint_waist" [label="xyz: 0 0.0945 0.00415 \nrpy: 2.7756e-17 1.3056e-31 -2.8372e-16"]
+"joint_waist" -> "link_waist"
+"link_waist" -> "joint_big_arm" [label="xyz: 0 0.15678 -0.018 \nrpy: 1.5708 -0 1.5708"]
+"joint_big_arm" -> "link_big_arm"
+"link_big_arm" -> "joint_forearm" [label="xyz: 0.35 0 0 \nrpy: -6.4095e-31 2.2204e-16 -7.7037e-34"]
+"joint_forearm" -> "link_forearm"
+"link_forearm" -> "joint_wrist_pitching" [label="xyz: 0.3 0 0 \nrpy: 0 -0 1.5708"]
+"joint_wrist_pitching" -> "link_wrist_pitching"
+"link_wrist_pitching" -> "joint_wrist_rotation" [label="xyz: 0 0 0 \nrpy: -1.57079 -1.57079 3.14159"]
+"joint_wrist_rotation" -> "link_wrist_rotation"
+"link_wrist_rotation" -> "joint_finger_left" [label="xyz: -0.01295 -0.00014458 0.091042 \nrpy: -1.57079 -1.57079 3.14159"]
+"joint_finger_left" -> "link_finger_left"
+"link_wrist_rotation" -> "joint_finger_right" [label="xyz: 0.01295 -0.00014458 0.091042 \nrpy: -1.57079 -1.57079 3.14159"]
+"joint_finger_right" -> "link_finger_right"
+"link_wrist_rotation" -> "joint_gripper_frame" [label="xyz: 0 0 0.16 \nrpy: 0 -0 0"]
+"joint_gripper_frame" -> "link_gripper_frame"
+"base_link" -> "joint_wheel_1" [label="xyz: 0.19419 0.00022708 -0.042 \nrpy: -1.5708 -0 -1.5708"]
+"joint_wheel_1" -> "link_wheel_1"
+"base_link" -> "joint_wheel_2" [label="xyz: -0.096968 -0.16833 -0.042 \nrpy: -1.5708 -2.77556e-17 2.618"]
+"joint_wheel_2" -> "link_wheel_2"
+"base_link" -> "joint_wheel_3" [label="xyz: -0.097362 0.1681 -0.042 \nrpy: -1.5708 -5.55112e-17 0.5236"]
+"joint_wheel_3" -> "link_wheel_3"
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<robot name="camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--The camera xacro macro-->
+  <macro name="head_camera" params="parent name color">
+    <joint name="joint_${name}" type="fixed">
+      <origin xyz="-0.001 0.032 0" rpy="5.7785E-17 0 0" />
+      <parent link="link_${parent}" />
+      <child  link="link_${name}" />
+      <axis xyz="0 0 0" />
+    </joint>
+
+    <link name="link_${name}">
+      <inertial>
+        <origin xyz="0.02355 0.0084844 -3.0636E-05" rpy="0 0 0" />
+        <mass value="0.094765" />
+        <inertia ixx="5.1998E-05" ixy="1.2567E-05" ixz="1.377E-07"
+                 iyy="7.5857E-05" iyz="2.5368E-08" izz="5.2142E-05" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/link_${name}.stl" />
+        </geometry>
+        <material name="${color}" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/link_${name}_l.stl" />
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+</robot>

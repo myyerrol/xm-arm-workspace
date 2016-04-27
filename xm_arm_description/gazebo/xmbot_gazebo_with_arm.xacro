@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<robot name="xmbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find xm_arm_description)/gazebo/xm_gazebo_urdf.xacro" />
+
+  <xacro:include filename="$(find xm_arm_description)/gazebo/xm_arm_gazebo_transmission.xacro" />
+  <xacro:include filename="$(find xm_arm_description)/gazebo/xm_gripper_gazebo_transmission.xacro" />
+
+  <xacro:include filename="$(find xm_arm_description)/gazebo/xm_gazebo_ros_control.xacro" />
+
+</robot>

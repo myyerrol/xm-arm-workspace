@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<xacro:property name="M_PI" value="3.1415926535897931" />
+
+  <gazebo reference="base_link">
+    <kp>10000.0</kp>
+    <kd>10.0</kd>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>10.0</maxVel>
+    <minDepth>0.0005</minDepth>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="link_wheel_1">
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.003</minDepth>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="link_wheel_2">
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.003</minDepth>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="link_wheel_3">
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.003</minDepth>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="joint_wheel_1">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="joint_wheel_2">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="joint_wheel_3">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+
+  <gazebo reference="link_lift">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="link_waist">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="link_big_arm">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="link_forearm">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="link_wrist_pitching">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="link_wrist_rotation">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="link_finger_left">
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <mu1>30.0</mu1>
+    <mu2>30.0</mu2>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="link_finger_right">
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <mu1>30.0</mu1>
+    <mu2>30.0</mu2>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="link_gripper_frame">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="link_laser">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="link_kinect">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="link_kinect">
+    <sensor type="depth" name="kinect">
+      <update_rate>20</update_rate>
+      <camera>
+        <horizontal_fov>${60 * M_PI/180.0}</horizontal_fov>
+        <image>
+          <format>R8G8B8</format>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <clip>
+          <near>0.5</near>
+          <far>9</far>
+        </clip>
+      </camera>
+      <plugin name="kinect_controller" filename="libgazebo_ros_openni_kinect.so">
+        <baseline>0.1</baseline>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>15.0</updateRate>
+        <cameraName>head_kinect</cameraName>
+        <imageTopicName>/head_kinect/rgb/image_raw</imageTopicName>
+        <cameraInfoTopicName>/head_kinect/rgb/camera_info</cameraInfoTopicName>
+        <depthImageTopicName>/head_kinect/depth/image_raw</depthImageTopicName>
+        <depthImageCameraInfoTopicName>/head_kinect/depth/camera_info</depthImageCameraInfoTopicName>
+        <pointCloudTopicName>/head_kinect/depth/points</pointCloudTopicName>
+        <frameName>link_kinect_depth</frameName>
+        <pointCloudCutoff>0.35</pointCloudCutoff>
+        <distortionK1>0.00000001</distortionK1>
+        <distortionK2>0.00000001</distortionK2>
+        <distortionK3>0.00000001</distortionK3>
+        <distortionT1>0.00000001</distortionT1>
+        <distortionT2>0.00000001</distortionT2>
+        <CxPrime>0</CxPrime>
+        <Cx>0</Cx>
+        <Cy>0</Cy>
+        <focalLength>0</focalLength>
+        <hackBaseline>0</hackBaseline>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

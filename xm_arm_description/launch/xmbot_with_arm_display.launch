@@ -1,0 +1,18 @@
+<launch>
+
+  <arg name="gui" default="True" />
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find xm_arm_description)/urdf/xmbot_with_arm.xacro" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="$(arg gui)" />
+    <param name="rate" value="20.0" />
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <param name="publish_frequency" value="20.0"/>
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find xm_arm_description)/rviz/xmbot_with_arm.rviz" />
+
+</launch>

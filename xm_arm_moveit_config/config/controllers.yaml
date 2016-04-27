@@ -1,0 +1,12 @@
+controller_list:
+  - name: xm_arm/arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - joint_lift
+      - joint_waist
+      - joint_big_arm
+      - joint_forearm
+      - joint_wrist_pitching
+      - joint_wrist_rotation

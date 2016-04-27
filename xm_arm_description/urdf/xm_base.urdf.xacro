@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<robot name="base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- The base xacro macro -->
+  <macro name="base" params="name color">
+    <link name="${name}_link">
+      <inertial>
+        <origin xyz="-0.030096 -0.00033289 0.43437" rpy="0 0 0" />
+        <mass value="28.429" />
+        <inertia ixx="3.3043" ixy="0.00011321" ixz="-0.22301"
+                 iyy="3.3216" iyz="0.0036429" izz="0.40235" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/${name}_link.stl" />
+        </geometry>
+        <material name="${color}" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+		      <mesh filename="package://xm_arm_description/meshes/${name}_link_l.stl" />
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+  <link name="base_footprint">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.05 0.05 0.001" />
+        </geometry>
+        <material name="TransparentGreen" />
+      </visual>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child  link="base_link" />
+  </joint>
+
+</robot>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<robot name="laser" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--The laser xacro macro-->
+  <macro name="laser" params="parent name color">
+    <joint name="joint_${name}" type="fixed">
+      <origin xyz="0.20674 0.00022708 0.181" rpy="-6.7054E-18 6.9389E-17 -1.5708" />
+      <parent link="${parent}_link" />
+      <child link="link_${name}" />
+      <axis xyz="0 0 0" />
+    </joint>
+
+    <link name="link_${name}">
+      <inertial>
+        <origin xyz="0 -3.8367E-05 -0.0055273" rpy="0 0 0" />
+        <mass value="0.1221" />
+        <inertia ixx="6.4774E-05" ixy="-4.322E-13" ixz="7.0123E-21"
+                 iyy="6.4681E-05" iyz="-1.0865E-07" izz="3.7788E-05" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/link_${name}.stl" />
+        </geometry>
+        <material name="${color}" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/link_${name}_l.stl" />
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+</robot>

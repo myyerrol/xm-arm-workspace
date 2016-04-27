@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <transmission name="wheel_1_simp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_wheel_1">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_motor_1">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wheel_2_simp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_wheel_2">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_motor_2">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wheel_3_simp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_wheel_3">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_motor_3">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>

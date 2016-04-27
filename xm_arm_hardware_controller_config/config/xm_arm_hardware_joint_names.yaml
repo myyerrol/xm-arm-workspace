@@ -1,0 +1,8 @@
+xm_arm:
+  joint_names:
+    - joint_lift
+    - joint_waist
+    - joint_big_arm
+    - joint_forearm
+    - joint_wrist_pitching
+    - joint_wrist_rotation

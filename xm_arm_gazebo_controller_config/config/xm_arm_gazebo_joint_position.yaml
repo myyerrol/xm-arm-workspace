@@ -1,0 +1,34 @@
+xm_arm:
+  # Position Controllers
+  joint_lift_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_lift
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint_waist_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_waist
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint_big_arm_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_big_arm
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint_forearm_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_forearm
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint_wrist_pitching_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_wrist_pitching
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint_wrist_rotation_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_wrist_rotation
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint_finger_left_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_finger_left
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint_finger_right_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_finger_right
+    pid: {p: 100.0, i: 0.01, d: 10.0}

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>xm_arm_gripper_control</name>
+  <version>0.0.1</version>
+  <description>The xm_arm_gripper_control package can control gripper</description>
+
+  <maintainer email="myyerrol@126.com">myyerrol</maintainer>
+
+  <license>BSD</license>
+
+  <author email="myyerrol@126.com">myyerrol</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>actionlib</build_depend>
+  <build_depend>dynamixel_controllers</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>xm_arm_msgs</build_depend>
+
+  <run_depend>actionlib</run_depend>
+  <run_depend>dynamixel_controllers</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>xm_arm_msgs</run_depend>
+
+</package>

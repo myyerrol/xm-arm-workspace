@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="xm_arm_teleop_trajectory_keyboard" pkg="xm_arm_teleop" type="xm_arm_teleop_trajectory_keyboard"
+        respawn="false" output="screen" >
+  </node>
+
+</launch>

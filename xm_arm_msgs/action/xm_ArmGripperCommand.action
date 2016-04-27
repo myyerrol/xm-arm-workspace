@@ -1,0 +1,9 @@
+#Goal
+xm_arm_msgs/xm_ArmGripperCommand command
+---
+# Result
+bool finish
+---
+# Feedback
+float64 position
+float64 torque

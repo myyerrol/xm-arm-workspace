@@ -1,0 +1,14 @@
+joints: ['xm_gripper']
+
+xm_gripper:
+  controller:
+    package: dynamixel_controllers
+    module: joint_position_controller
+    type: JointPositionController
+  joint_name: xm_gripper
+  joint_speed: 2.0
+  motor:
+    id: 1
+    init: 512
+    min: 0
+    max: 1024

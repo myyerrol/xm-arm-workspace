@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<robot name="kinect" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<xacro:property name="M_PI" value="3.1415926535897931" />
+
+   <!--The kinect xacro macro-->
+  <macro name="head_kinect" params="parent name color type">
+    <joint name="joint_${name}" type="${type}">
+      <origin xyz="-0.06656 0.00022708 1.1145" rpy="1.5708 0 -6.1679E-17" />
+      <parent link="${parent}_link" />
+      <child  link="link_${name}" />
+      <axis xyz="0 0 1" />
+      <limit lower="-0.523" upper="0.523" effort="500" velocity="1" />
+    </joint>
+
+    <link name="link_${name}">
+      <inertial>
+        <origin xyz="0.00024993 -0.00050157 -3.2753E-09" rpy="0 0 0" />
+        <mass value="1.3398" />
+        <inertia ixx="0.007821" ixy="-3.6481E-06" ixz="1.9233E-11"
+                 iyy="0.0080704" iyz="7.704E-11" izz="0.00058859" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/link_${name}.stl" />
+        </geometry>
+        <material name="${color}" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/link_${name}_l.stl" />
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+  <joint name="kinect_depth_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-${M_PI/2} 0 -${M_PI/2}" />
+    <parent link="link_kinect" />
+    <child link="link_kinect_depth" />
+  </joint>
+
+  <link name="link_kinect_depth" />
+
+</robot>

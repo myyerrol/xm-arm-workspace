@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: xm_arm_description
+    relative_path: urdf/xmbot_with_arm.urdf
+  SRDF:
+    relative_path: config/xmbot.srdf
+  CONFIG:
+    generated_timestamp: 1461218099

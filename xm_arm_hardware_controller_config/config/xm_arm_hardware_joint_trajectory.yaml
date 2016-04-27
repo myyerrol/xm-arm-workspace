@@ -1,0 +1,10 @@
+xm_arm:
+  arm_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints:
+    - joint_lift
+    - joint_waist
+    - joint_big_arm
+    - joint_forearm
+    - joint_wrist_pitching
+    - joint_wrist_rotation

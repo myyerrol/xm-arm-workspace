@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<robot name="wheel" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- The wheel xacro macro -->
+  <macro name="wheel" params="suffix parent color origin_xyz origin_rpy type inert_origin_xyz inert_ixx inert_ixy inert_ixz inert_iyy inert_iyz inert_izz">
+    <joint name="joint_wheel_${suffix}" type="${type}">
+      <origin xyz="${origin_xyz}" rpy="${origin_rpy}" />
+      <parent link="${parent}_link" />
+      <child link="link_wheel_${suffix}" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="link_wheel_${suffix}">
+      <inertial>
+        <origin xyz="${inert_origin_xyz}" rpy="0 0 0" />
+        <mass value="0.34065" />
+        <inertia ixx="${inert_ixx}" ixy="${inert_ixy}" ixz="${inert_ixz}"
+                 iyy="${inert_iyy}" iyz="${inert_iyz}" izz="${inert_izz}" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/link_wheel_${suffix}.stl" />
+        </geometry>
+        <material name="${color}" />
+      </visual>
+      <collision>
+	      <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://xm_arm_description/meshes/link_wheel_${suffix}_l.stl" />
+        </geometry>
+      </collision>
+    </link>
+  </macro>
+
+</robot>

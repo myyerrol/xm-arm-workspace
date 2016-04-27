@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- Load rgbd sensor configurations from YAML file -->
+  <rosparam command="load" file="$(find xm_arm_moveit_config)/config/sensors_rgbd.yaml" />
+
+</launch>

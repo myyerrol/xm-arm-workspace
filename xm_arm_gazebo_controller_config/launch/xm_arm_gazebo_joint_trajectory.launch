@@ -1,0 +1,9 @@
+<launch>
+
+  <rosparam file="$(find xm_arm_gazebo_controller_config)/config/xm_arm_gazebo_joint_trajectory.yaml" command="load" />
+
+  <node name="joint_trajectory_controller_spawner" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen" ns="/xm_arm"
+        args="arm_controller" />
+
+</launch>

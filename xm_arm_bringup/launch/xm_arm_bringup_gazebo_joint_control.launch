@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- Launch Gazebo  -->
+  <include file="$(find xm_arm_gazebo)/launch/xm_arm_empty_world.launch" />
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <include file="$(find xm_arm_gazebo_controller_config)/launch/xm_arm_gazebo_joint_position.launch" />
+  <include file="$(find xm_arm_gazebo_controller_config)/launch/xm_arm_gazebo_joint_states.launch" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find xm_arm_bringup)/rviz/xm_arm_bringup_gazebo.rviz" />
+
+</launch>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>xm_arm_trajectory_control</name>
+  <version>0.0.1</version>
+  <description>The xm_arm_trajectory_control package can control joint trajectory</description>
+
+  <maintainer email="myyerrol@126.com">myyerrol</maintainer>
+
+  <license>BSD</license>
+
+  <author email="myyerrol@126.com">myyerrol</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>actionlib</build_depend>
+  <build_depend>control_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>trajectory_msgs</build_depend>
+
+  <run_depend>actionlib</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
+
+</package>
