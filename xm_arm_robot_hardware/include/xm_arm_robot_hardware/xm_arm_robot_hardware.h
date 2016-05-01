@@ -36,8 +36,8 @@
 // Authors: myyerrol
 // Created: 2016.4.15
 
-#ifndef ARM_ROBOT_HARDWARE_H
-#define ARM_ROBOT_HARDWARE_H
+#ifndef XM_ARM_ROBOT_HARDWARE_H
+#define XM_ARM_ROBOT_HARDWARE_H
 
 #include <ros/ros.h>
 #include <ros/callback_queue.h>
@@ -105,4 +105,4 @@ private:
     std::vector<HARDWARE_STATUS> jnt_status_;
 };
 
-#endif // ARM_ROBOT_HARDWARE_H
+#endif // XM_ARM_ROBOT_HARDWARE_H

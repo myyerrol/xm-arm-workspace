@@ -36,8 +36,8 @@
 // Authors: myyerrol
 // Created: 2016.4.15
 
-#ifndef ARM_TELEOP_POSITION_KEYBOARD_H
-#define ARM_TELEOP_POSITION_KEYBOARD_H
+#ifndef XM_ARM_TELEOP_POSITION_KEYBOARD_H
+#define XM_ARM_TELEOP_POSITION_KEYBOARD_H
 
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
@@ -86,4 +86,4 @@ private:
     std::vector<std::string>              gripper_name_;
 };
 
-#endif // ARM_TELEOP_POSITION_KEYBOARD_H
+#endif // XM_ARM_TELEOP_POSITION_KEYBOARD_H

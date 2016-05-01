@@ -36,8 +36,8 @@
 // Authors: myyerrol
 // Created: 2016.4.15
 
-#ifndef ARM_TELEOP_TRAJECTORY_KEYBOARD
-#define ARM_TELEOP_TRAJECTORY_KEYBOARD
+#ifndef XM_ARM_TELEOP_TRAJECTORY_KEYBOARD
+#define XM_ARM_TELEOP_TRAJECTORY_KEYBOARD
 
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
@@ -91,4 +91,4 @@ private:
     std::string                             teleop_type_;
 };
 
-#endif // ARM_TELEOP_TRAJECTORY_KEYBOARD
+#endif // XM_ARM_TELEOP_TRAJECTORY_KEYBOARD

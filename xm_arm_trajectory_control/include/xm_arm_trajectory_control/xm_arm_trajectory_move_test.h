@@ -36,8 +36,8 @@
 // Authors: myyerrol
 // Created: 2016.4.15
 
-#ifndef ARM_TRAJECTORY_MOVE_TEST_H
-#define ARM_TRAJECTORY_MOVE_TEST_H
+#ifndef XM_ARM_TRAJECTORY_MOVE_TEST_H
+#define XM_ARM_TRAJECTORY_MOVE_TEST_H
 
 #include <ros/ros.h>
 #include <actionlib/client/simple_action_client.h>
@@ -63,4 +63,4 @@ private:
     int trajectory_index_;
 };
 
-#endif //ARM_TRAJECTORY_MOVE_TEST_H
+#endif // XM_ARM_TRAJECTORY_MOVE_TEST_H

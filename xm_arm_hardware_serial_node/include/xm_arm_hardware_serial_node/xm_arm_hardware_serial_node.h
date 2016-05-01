@@ -36,8 +36,8 @@
 // Authors: startar, myyerrol
 // Created: 2012.4.8, 2016.4.15
 
-#ifndef ARM_HARDWARE_SERIAL_NODE_H_
-#define ARM_HARDWARE_SERIAL_NODE_H_
+#ifndef XM_ARM_HARDWARE_SERIAL_NODE_H_
+#define XM_ARM_HARDWARE_SERIAL_NODE_H_
 
 #include <ros/ros.h>
 #include "xm_arm_hardware_serial_port.h"
@@ -69,4 +69,4 @@ private:
 
 } // namespace xm_serial_node
 
-#endif // ARM_HARDWARE_SERIAL_NODE_H_
+#endif // XM_ARM_HARDWARE_SERIAL_NODE_H_
