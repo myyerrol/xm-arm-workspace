@@ -72,7 +72,6 @@ ArmTeleopTrajectoryKeyboard::ArmTeleopTrajectoryKeyboard()
     }
 
     ros::NodeHandle n_private("~");
-//    n_private.param<std::string>("teleop_type", teleop_type_, "physics");
     n_private.param("arm_pose_step", arm_pos_step_, 0.0174);
     n_private.param("gripper_pos_step", gripper_pos_step_, 0.1);
 

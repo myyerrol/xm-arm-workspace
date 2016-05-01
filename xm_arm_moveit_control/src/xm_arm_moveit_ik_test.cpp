@@ -42,25 +42,25 @@
 
 int main(int argc, char **argv)
 {
-    // Initialize ROS, create the node handle and an async spinner
+    // Initialize ROS, create the node handle and an async spinner.
     ros::init(argc, argv, "xm_arm_moveit_control_ik_test");
     ros::NodeHandle nh;
 
     ros::AsyncSpinner spin(1);
     spin.start();
 
-    // Get the arm planning group
+    // Get the arm planning group.
     moveit::planning_interface::MoveGroup plan_group("xm_arm");
     plan_group.setPlannerId("RRTConnectkConfigDefault");
     plan_group.setPlanningTime(1);
     plan_group.setGoalTolerance(0.5);
     plan_group.allowReplanning(true);
 
-    // Create a published for the arm plan visualization
+    // Create a published for the arm plan visualization.
     ros::Publisher display_pub = nh.advertise<moveit_msgs::DisplayTrajectory>(
         "/move_group/display_planned_path", 1, true);
 
-    // Set a target_pose message as a pose of the end effector
+    // Set a target_pose message as a pose of the end effector.
     geometry_msgs::PoseStamped target_pose;
     target_pose.header.frame_id = "base_footprint";
     target_pose.header.stamp = ros::Time::now();
@@ -72,11 +72,11 @@ int main(int argc, char **argv)
     target_pose.pose.position.y = 0.0;
     target_pose.pose.position.z = 0.0;
 
-    // Set the target pose, which is the target_pose we already defined
+    // Set the target pose, which is the target_pose we already defined.
     plan_group.setPoseTarget(target_pose);
 
     // Perform the planning step, and if it succeeds display the current
-    // arm trajectory and move the arm
+    // arm trajectory and move the arm.
     moveit::planning_interface::MoveGroup::Plan goal_plan;
 
     if (plan_group.plan(goal_plan))

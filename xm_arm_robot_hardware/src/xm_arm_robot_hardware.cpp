@@ -118,7 +118,7 @@ void ArmRobotHardware::transPositionJointToActuator()
 }
 
 // Because autuator's direction is not unified, the signs of positive and
-// negative may have problem in the following formula
+// negative may have problem in the following formula.
 void ArmRobotHardware::transPositionActuatorToJoint()
 {
     jnt_pos_["joint_lift"]    = -act_pos_["actuator_lift"] * 0.010;

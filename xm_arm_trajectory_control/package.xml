@@ -2,7 +2,7 @@
 <package>
   <name>xm_arm_trajectory_control</name>
   <version>0.0.1</version>
-  <description>The xm_arm_trajectory_control package can control joint trajectory</description>
+  <description>The xm_arm_trajectory_control package can control joint trajectory.</description>
 
   <maintainer email="myyerrol@126.com">myyerrol</maintainer>
 

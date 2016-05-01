@@ -2,7 +2,7 @@
 <package>
   <name>xm_arm_msgs</name>
   <version>0.0.1</version>
-  <description>The xm_arm_msgs package provides messages, services and actions</description>
+  <description>The xm_arm_msgs package provides messages, services and actions.</description>
 
   <maintainer email="myyerrol@126.com">myyerrol</maintainer>
 

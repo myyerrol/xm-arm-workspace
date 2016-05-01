@@ -2,7 +2,7 @@
 <package>
   <name>xm_arm_hardware_serial_node</name>
   <version>0.0.1</version>
-  <description>The xm_arm_hardware_serial_node package provides serial communication between ros and embedded</description>
+  <description>The xm_arm_hardware_serial_node package provides serial communication between ros and embedded.</description>
 
   <maintainer email="myyerrol@126.com">myyerrol</maintainer>
 

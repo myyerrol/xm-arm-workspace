@@ -2,7 +2,7 @@
 <package>
   <name>xm_arm_hardware_controller_config</name>
   <version>0.0.1</version>
-  <description>The xm_arm_hardware_controller_config package provides controller configuration files for controling the arm</description>
+  <description>The xm_arm_hardware_controller_config package provides controller configuration files for controling the arm.</description>
 
   <maintainer email="myyerrol@126.com">myyerrol</maintainer>
 

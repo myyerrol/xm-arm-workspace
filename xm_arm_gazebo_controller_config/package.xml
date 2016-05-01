@@ -2,7 +2,7 @@
 <package>
   <name>xm_arm_gazebo_controller_config</name>
   <version>0.0.1</version>
-  <description>The xm_arm_gazebo_controller_config package provides controller configuration files for simulating in gazebo</description>
+  <description>The xm_arm_gazebo_controller_config package provides controller configuration files for simulating in gazebo.</description>
 
   <maintainer email="myyerrol@126.com">myyerrol</maintainer>
 

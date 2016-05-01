@@ -2,7 +2,7 @@
 <package>
   <name>xm_arm_robot_hardware</name>
   <version>0.0.1</version>
-  <description>The xm_arm_robot_hardware package implements hardware interface by using ros_control</description>
+  <description>The xm_arm_robot_hardware package implements hardware interface by using ros_control.</description>
 
   <maintainer email="myyerrol@126.com">myyerrol</maintainer>
 
