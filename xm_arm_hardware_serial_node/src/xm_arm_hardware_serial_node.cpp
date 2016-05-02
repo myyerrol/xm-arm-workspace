@@ -38,8 +38,7 @@
 
 #include <xm_arm_hardware_serial_node/xm_arm_hardware_serial_node.h>
 
-namespace xm_serial_node
-{
+namespace xm_serial_node {
 SerialNode::SerialNode(const ros::NodeHandle &nh,
                        const ros::NodeHandle &private_nh)
     : nh_(nh),

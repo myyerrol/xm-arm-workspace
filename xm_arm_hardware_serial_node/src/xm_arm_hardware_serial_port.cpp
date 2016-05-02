@@ -37,8 +37,7 @@
 
 #include <xm_arm_hardware_serial_node/xm_arm_hardware_serial_port.h>
 
-namespace xm_serial_node
-{
+namespace xm_serial_node {
 SerialPort::SerialPort()
 {
     cout << "SerialPort Object created!" << endl;

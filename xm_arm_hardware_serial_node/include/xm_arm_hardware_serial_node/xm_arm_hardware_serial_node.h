@@ -44,8 +44,7 @@
 #include <map>
 #include <string>
 
-namespace xm_serial_node
-{
+namespace xm_serial_node {
 class SerialNode
 {
 public:

@@ -55,8 +55,7 @@ using namespace std;
 using namespace boost;
 using namespace boost::asio;
 
-namespace xm_serial_node
-{
+namespace xm_serial_node {
 class SerialParams
 {
 public:
