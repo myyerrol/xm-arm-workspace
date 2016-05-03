@@ -15,7 +15,7 @@
 
   <node name="gripper_controller_spawner" pkg="controller_manager" type="spawner"
         respawn="false" output="screen" ns="/xm_arm"
-         args="joint_finger_left_position_controller
-               joint_finger_right_position_controller" />
+        args="joint_finger_left_position_controller
+              joint_finger_right_position_controller" />
 
 </launch>
