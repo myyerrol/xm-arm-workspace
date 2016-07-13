@@ -3,6 +3,8 @@
 
 ## 1. Introduction
 This ros metapackage builds the simple framework for the second generation of xmbot's manipulator, which includes the underlying driver, motion control, motion planning and motion simulation codes. About more code datails for xm-project, please visite follow website: https://www.github.com/xm-project.
+![xm_arm_software_architecture](.images/xm_arm_software_architecture.png)
+
 ### 1.1 Hardware Driver
 - **xm_arm_robot_hardware:** The xm_arm_robot_hardware package implements hardware interface by using ros_control.
 - **xm_arm_hardware_serial_node:** The xm_arm_hardware_serial_node package provides serial communication between ros and embedded.
@@ -44,6 +46,7 @@ $ roslaunch xm_arm_bringup xm_arm_bringup_gazebo_joint_control.launch
 $ rosrun xm_arm_teleop xm_arm_teleop_position_keyboard
 ```
 ![xm_arm_control_gazebo](.images/xm_arm_control_gazebo.png)
+
 ### 3.2 Motion planning
 ```bash
 $ roslaunch xm_arm_moveit demo.launch
@@ -54,6 +57,7 @@ $ roslaunch xm_arm_bringup xm_arm_bringup_moveit_and_gazebo.launch
 ```
 ![xm_arm_motion_planning_rviz](.images/xm_arm_motion_planning_rviz.png)
 ![xm_arm_motion_planning_gazebo](.images/xm_arm_motion_planning_gazebo.png)
+
 ### 3.3 Avoide collision
 ```bash
 $ roslaunch xm_arm_bringup xm_arm_bringup_moveit_and_gazebo.launch
@@ -62,6 +66,6 @@ $ roslaunch xm_arm_bringup xm_arm_bringup_moveit_and_gazebo.launch
 ![xm_arm_avoide_collision_gazebo](.images/xm_arm_avoide_collision_gazebo.png)
 
 ## 4. Summary
-- According to the new mechanical arm software architecture, I rewrited the entire bottom-level driver codes of the xmbot's mechanical arm and add more features, such as motion planning, motion simulation. 
+- According to the new mechanical arm software architecture, I rewrited the entire bottom-level driver codes of the xmbot's mechanical arm and add more features, such as motion planning, motion simulation.
 - Because of the limited time, I have only finished the simple framework for the second generation of xmbot's manipulator. I haven't fully done some modules in architecture, such as motion planning, obstacle avoidance, v-rep simulation and encapsulation for module.
 - For future planning, I will hope that new team members can gradually complete the final mechanical arm software architecture and improve the arm manipulation test better and better. For myself, I will need to improve my theory and programming ability, If there is a chance, then I will continue to do same research on the mechanical arm, until that time, I believe I must do better than now!
