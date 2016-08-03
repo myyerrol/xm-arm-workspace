@@ -2,7 +2,7 @@
 ![xm_arm](.images/xm_arm.jpg)
 
 ## 1. Introduction
-This ros metapackage builds the simple framework for the second generation of xmbot's manipulator, which includes the underlying driver, motion control, motion planning and motion simulation codes. About more code datails for xm-project, please visite follow website: https://www.github.com/xm-project.
+This ros metapackage builds the simple framework for the second generation of xmbot's manipulator, which includes the underlying driver, motion control, motion planning and motion simulation codes. About more code datails for xm-project, please visit following website: https://www.github.com/xm-project.
 ![xm_arm_software_architecture](.images/xm_arm_software_architecture.png)
 
 ### 1.1 Hardware Driver
