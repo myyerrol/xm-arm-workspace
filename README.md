@@ -43,7 +43,7 @@ $> roscd
 $> cd ../src
 $> git clone https://github.com/myyerrol/xm_arm_workspace.git
 $> cd ..
-$> rosdep install --from-paths src --ignore-src --rosdistro indigo
+$> rosdep install -y --from-paths src --ignore-src --rosdistro indigo
 $> catkin_make
 ```
 
