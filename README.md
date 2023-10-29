@@ -1,4 +1,4 @@
-# xm_arm_workspace
+# xm-arm-workspace
 
 ![xm_arm](.images/xm_arm.jpg)
 
@@ -41,7 +41,7 @@ This ros metapackage builds the simple framework for the second generation of xm
 ```bash
 $> roscd
 $> cd ../src
-$> git clone https://github.com/myyerrol/xm_arm_workspace.git
+$> git clone https://github.com/myyerrol/xm-arm-workspace.git
 $> cd ..
 $> rosdep install -y --from-paths src --ignore-src --rosdistro indigo
 $> catkin_make
